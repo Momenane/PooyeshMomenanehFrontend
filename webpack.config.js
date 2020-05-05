@@ -49,7 +49,7 @@ const common = {
       "./scss/vendor.scss",
       "./dev_modules/angularPagination/angular-pagination.min",
       "angular1-star-rating",
-      "jQuery"
+      "jquery"
     ],
     app: "./app/app.module.js"
   },
@@ -132,11 +132,11 @@ const common = {
   plugins: [
     new webpack.ProvidePlugin({
       $: "jquery",
-      jQuery: "jquery",
+      jquery: "jquery",
       "window.$": "jquery",
-      "window.jQuery": "jquery",
+      "window.jquery": "jquery",
       Waves: "node-waves",
-      iziToast: "iziToast",
+      iziToast: "izitoast",
       moment: "jalali-moment"
     }),
     new webpack.HotModuleReplacementPlugin(),

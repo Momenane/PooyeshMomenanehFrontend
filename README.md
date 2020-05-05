@@ -37,6 +37,10 @@ npm i
 
 ```bash
 npm run build
+#if have error on 'node-sass'
+npm install
+nodejs node_modules/node-sass/scripts/install.js
+npm rebuild node-sass
 ```
 <div dir=rtl>
 برای ران کردن پروژه را وارد کنید
