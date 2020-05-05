@@ -1,9 +1,15 @@
+<div dir=rtl>
 بنام خدا
 
 برای ران کردن پروژه اول پروژه را در محل مورد نظر کلون کنید با استفاده از گیت بش
 
-$ git bash https://github.com/Momenane/PooyeshMomenanehFrontend.git
+</div>
 
+```bash
+$ git clone https://github.com/Momenane/PooyeshMomenanehFrontend.git
+```
+
+<div dir=rtl>
 سپس با محیط برنامه نویسی خود پوشه را باز کنید
 
 در ترمینال ادیتور
@@ -15,17 +21,27 @@ Ctrl + `
 
 ابتدا دستور
 
-npm i
+</div>
 
+```bash
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true # to skip download chromimum
+npm i
+```
+
+<div dir=rtl>
 برای نصب پکیجها
 
 و سپس دستور
 
-npm run build
+</div>
 
+```bash
+npm run build
+```
+<div dir=rtl>
 برای ران کردن پروژه را وارد کنید
 بصورت اتوماتیک پروژه روی لوکال هاست ران میشود
-
+</div>
 
 
 
