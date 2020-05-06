@@ -3,10 +3,10 @@ function isStartupTypeFilter() {
         let type;
         switch (value) {
             case 1:
-                type = 'نوپا'
+                type = 'نوپا';
                 break;
             case 2:
-                type = 'غیر نوپا'
+                type = 'غیر نوپا';
                 break;
             default:
                 break;

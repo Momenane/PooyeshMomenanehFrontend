@@ -1,4 +1,4 @@
-IndexController.$inject = ["panel.IndexServices", "$scope", "$state", "$auth"];
+IndexController.$inject = ["panel.indexServices", "$scope", "$state", "$auth"];
 
 function IndexController(IndexServices, scope, state, auth) {
 
@@ -9,7 +9,7 @@ function IndexController(IndexServices, scope, state, auth) {
     self.user = {
         name: user.name,
         logo: user.logo
-    }
+    };
 
     scope.$on("logoId", function (event, data) {
         self.user.logo = data;
@@ -19,10 +19,10 @@ function IndexController(IndexServices, scope, state, auth) {
         auth.logOut();
     };
 
-};
+}
 
 module.exports = ngModule => {
 
-    ngModule.controller('panel.IndexController', IndexController);
+    ngModule.controller('panel.indexController', IndexController);
 
 };

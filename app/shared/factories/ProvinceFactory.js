@@ -98,7 +98,7 @@
         get: function () {
             return province;
         }
-    }
+    };
 
 }
  

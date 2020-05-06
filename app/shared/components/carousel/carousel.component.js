@@ -4,14 +4,14 @@ import {
 
 const bindings = {
     someOutput: '&'
-}
+};
 
 const carouselComponent = {
     template: require('./carousel.html'),
     controller: carouselController,
     controllerAs: 'self',
     bindings: bindings
-}
+};
 
 
 module.exports = ngModule => {

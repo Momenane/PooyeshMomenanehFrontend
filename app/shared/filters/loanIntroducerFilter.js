@@ -3,16 +3,16 @@ function loanIntroducerFilter() {
         let type;
         switch (value) {
             case 1:
-                type = 'معاونت علمی و فناوری ریاست جمهوری'
+                type = 'معاونت علمی و فناوری ریاست جمهوری';
                 break;
             case 2:
-                type = 'صندوق نوآوری و شکوفایی'
+                type = 'صندوق نوآوری و شکوفایی';
                 break;
             case 3:
-                type = 'پارک فناوری پردیس'
+                type = 'پارک فناوری پردیس';
                 break;
             case 4:
-                type = 'صندوق توسعه فناوری های نوین'
+                type = 'صندوق توسعه فناوری های نوین';
                 break;
             default:
                 break;

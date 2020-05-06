@@ -1,4 +1,4 @@
-IndexController.$inject = ["general.IndexServices", "$auth", "$state", "$http"];
+IndexController.$inject = ["general.indexServices", "$auth", "$state", "$http"];
 
 function IndexController(IndexServices, auth, state, http) {
 
@@ -8,15 +8,12 @@ function IndexController(IndexServices, auth, state, http) {
     self.user = {
         name: user.name,
         logo: user.logo
-    }
+    };
 
     self.logout = function () {
         auth.logOut();
     };
-
-   
-
-};
+}
 module.exports = ngModule => {
 
     ngModule.controller('general.indexController', IndexController);

@@ -3,10 +3,10 @@ function isStartupTypeFactory() {
         let type;
         switch (value) {
             case true:
-                type = 'نوپا'
+                type = 'نوپا';
                 break;
             case false:
-                type = 'غیر نوپا'
+                type = 'غیر نوپا';
                 break;
             default:
                 break;

@@ -2,7 +2,7 @@ IndexServices.$inject = ["$resource"];
 
 function IndexServices($resource) {
 
-    return $resource(`${apiGetWay}/:type/:id/:routePart`, { id: '@id', type: '@type',routePart:'@routePart' }, {
+    return $resource(`${apiGetWay}reportCenter/dashboard/:type/:id/:routePart`, { id: '@id', type: '@type', routePart: '@routePart' }, {
 
         query: { ignoreLoadingBar: true, method: "GET", isArray: true },
 
@@ -15,12 +15,12 @@ function IndexServices($resource) {
         update: { ignoreLoadingBar: true, method: "PUT" }
 
     });
-    
+
 
 }
 
 module.exports = ngModule => {
 
-    ngModule.factory('general.IndexServices', IndexServices);
+    ngModule.factory('panel.jahadiPanel.indexServices', IndexServices);
 
 };

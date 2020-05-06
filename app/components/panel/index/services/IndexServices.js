@@ -21,6 +21,6 @@ function IndexServices($resource) {
 
 module.exports = ngModule => {
 
-    ngModule.factory('panel.IndexServices', IndexServices);
+    ngModule.factory('panel.indexServices', IndexServices);
 
 };

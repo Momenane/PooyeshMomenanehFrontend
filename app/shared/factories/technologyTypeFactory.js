@@ -3,34 +3,34 @@ function technologyTypeFactory() {
         let type;
         switch (value) {
             case 1:
-                type = 'نفت و گاز'
-                break;ks
+                type = 'نفت و گاز';
+                break;
             case 2:
-                type = 'مخابرات'
+                type = 'مخابرات';
                 break;
             case 3:
-                type = 'الکترونیک'
+                type = 'الکترونیک';
                 break;
             case 4:
-                type = 'مکانیک پیشرفته'
+                type = 'مکانیک پیشرفته';
                 break;
             case 5:
-                type = 'هوا فضا'
+                type = 'هوا فضا';
                 break;
             case 6:
-                type = 'فناوری اطلاعات'
+                type = 'فناوری اطلاعات';
                 break;
             case 7:
-                type = 'نانو'
+                type = 'نانو';
                 break;
             case 8:
-                type = 'پزشکی و دارو'
+                type = 'پزشکی و دارو';
                 break;
             case 9:
-                type = 'رباتیک'
+                type = 'رباتیک';
                 break;
             case 10:
-                type = 'سایر'
+                type = 'سایر';
                 break;
             default:
                 break;

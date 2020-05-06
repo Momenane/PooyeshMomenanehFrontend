@@ -19,7 +19,7 @@ function AppRun(http, cookies, rootScope, state, $transitions, auth) {
             return auth.logOut();
         }
         http.defaults.headers.common.Authorization = 'Bearer ' + user.auth_token;
-    }
+    };
 
     userHandler();
     rootScope.$on('$locationChangeStart', function (event, next, current) {

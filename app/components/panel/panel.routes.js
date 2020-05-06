@@ -7,7 +7,7 @@ function panelRouting($urlRouterProvider, $stateProvider) {
 		.state("panel", {
 			abstract: true,
 			// url: "/panel",
-			controller: "panel.IndexController",
+			controller: "panel.indexController",
 			controllerAs: "self",
 
 			templateProvider: [
@@ -31,10 +31,10 @@ function panelRouting($urlRouterProvider, $stateProvider) {
 						let deferred = $q.defer();
 
 						require.ensure([], function () {
-							let module = require("./index/Index.module");
+							let module = require("./index/index.module");
 
 							$ocLazyLoad.load({
-								name: "IndexModule"
+								name: "indexModule"
 							});
 
 							deferred.resolve(module);
@@ -86,7 +86,7 @@ function panelRouting($urlRouterProvider, $stateProvider) {
 					}
 				]
 			}
-		})
+		});
 		// .state("panel.jahadiRegister", {
 		// 	url: "/jahadiRegister",
 

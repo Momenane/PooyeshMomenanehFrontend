@@ -3,16 +3,16 @@ function warrantyTypeFilter() {
         let type;
         switch (value) {
             case 0:
-                type = 'شرکت در مناقصه'
+                type = 'شرکت در مناقصه';
                 break;
             case 1:
-                type = 'پیش پرداخت قرارداد'
+                type = 'پیش پرداخت قرارداد';
                 break;
             case 2:
-                type = 'حسن انجام تعهدات'
+                type = 'حسن انجام تعهدات';
                 break;
             case 3:
-                type = 'اعتباری'
+                type = 'اعتباری';
                 break;
             default:
                 break;

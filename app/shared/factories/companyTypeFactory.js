@@ -3,22 +3,22 @@ function companyTypeFactory() {
         let type;
         switch (value) {
             case 1:
-            type = 'سهامی خاص'
+            type = 'سهامی خاص';
             break;
             case 2:
-                type = 'مسئولیت محدود'
+                type = 'مسئولیت محدود';
                 break;
             case 3:
-                type = 'سهامی عام'
+                type = 'سهامی عام';
                 break;
             case 4:
-                type = 'تعاونی'
+                type = 'تعاونی';
                 break;
             case 5:
-                type = 'تضامینی'
+                type = 'تضامینی';
                 break;
             case 6:
-                type = 'موسسه غیر تجاری'
+                type = 'موسسه غیر تجاری';
                 break;
             default:
                 break;

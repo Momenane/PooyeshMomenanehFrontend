@@ -25,7 +25,7 @@ function dataStore() {
     if (typeof value === "object") {
       // newData = JSON.stringify(value);
       // temporaryData["value"];
-      Object.assign(temporaryData, value)
+      Object.assign(temporaryData, value);
     } else {
       throw new Error("Set Data ");
     }

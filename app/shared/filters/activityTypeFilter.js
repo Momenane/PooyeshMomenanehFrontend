@@ -3,19 +3,19 @@ function activityTypeFilter() {
         let type;
         switch (value) {
             case 1:
-            type = 'تولیدی'
+            type = 'تولیدی';
             break;
             case 2:
-                type = 'توزیعی'
+                type = 'توزیعی';
                 break;
             case 3:
-                type = 'بازرگانی داخلی'
+                type = 'بازرگانی داخلی';
                 break;
             case 4:
-                type = 'بازرگانی خارجی'
+                type = 'بازرگانی خارجی';
                 break;
             case 5:
-                type = 'آزمایشگاهی/ تحقیقاتی'
+                type = 'آزمایشگاهی/ تحقیقاتی';
                 break;
             default:
                 break;

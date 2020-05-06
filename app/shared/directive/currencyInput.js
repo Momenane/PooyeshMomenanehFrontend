@@ -7,7 +7,7 @@ function currencyInput($filter, $browser) {
             $element.addClass('numberInput');
             $element.parent().css("position", "relative");
             $element.parent()
-                .append("<div class='text-price'></div>")
+                .append("<div class='text-price'></div>");
             var elementTextPrice = $element.parent().find(".text-price");
 
 
@@ -15,7 +15,7 @@ function currencyInput($filter, $browser) {
             var separators = {
                 'thousands': $filter('number')(1000).substr(1, 1),
                 'decimal': $filter('number')(1.1).substr(1, 1)
-            }
+            };
             var decimalEntered = false;
 
 
@@ -35,7 +35,7 @@ function currencyInput($filter, $browser) {
                 dahyek: ["ده", "یازده", "دوازده", "سیزده", "چهارده", "پانزده", "شانزده", "هفده", "هجده", "نوزده"],
                 sadgan: ["", "یکصد", "دویست", "سیصد", "چهارصد", "پانصد", "ششصد", "هفتصد", "هشتصد", "نهصد"],
                 invalid: "مقدار وارد شده نا معتبر است"
-            }
+            };
 
             function textPriceHandler(text, element) {
                 if (text) {
@@ -94,13 +94,13 @@ function currencyInput($filter, $browser) {
                 else {
                     var remain = number.length % 3;
                     if (remain > 0) {
-                        for (var i = 0; i < 3 - remain; i++) {
+                        for (let i = 0; i < 3 - remain; i++) {
                             number = '0' + number;
                         }
                     }
 
                     var count = number.length / 3;
-                    for (var i = 0; i < count; i++) {
+                    for (let i = 0; i < count; i++) {
                         var subNumber = parseInt(number.substring(i * 3, (i * 3) + 3));
                         if (subNumber != 0) {
                             result = result + convertThreeDigitNumberToPersianString(subNumber) + " " + base[count - 1 - i] + " " + commanLang.and + " ";
@@ -153,7 +153,7 @@ function currencyInput($filter, $browser) {
 
                 var value = $element.val().split(separators.thousands).join('').split(separators.decimal).join('.');
 
-                textPriceHandler(value, elementTextPrice)
+                textPriceHandler(value, elementTextPrice);
 
                 if (decimalEntered) {
                     decimalEntered = false;
@@ -161,23 +161,23 @@ function currencyInput($filter, $browser) {
                 }
                 if (value.indexOf('.') > 1 && value.slice(-1) == '0') { $element.val(value); return; }
                 $element.val($filter('number')(value));
-            }
+            };
 
             ngModelCtrl.$parsers.push(function (viewValue) {
                 return viewValue.split(separators.thousands).join('').split(separators.decimal).join('.');
-            })
+            });
 
             ngModelCtrl.$render = function () {
-                $element.val($filter('number')(ngModelCtrl.$viewValue, false))
-            }
+                $element.val($filter('number')(ngModelCtrl.$viewValue, false));
+            };
 
-            $element.bind('change', listener)
-            $element.bind('focus', listener)
+            $element.bind('change', listener);
+            $element.bind('focus', listener);
 
             $element.bind('blur', function (event) {
                 elementTextPrice.css("display", "0");
                 elementTextPrice.css("visibility", "hidden");
-            })
+            });
 
             $element.bind('keydown keypress', function (event) {
 
@@ -191,14 +191,14 @@ function currencyInput($filter, $browser) {
 
                 if (String.fromCharCode(key) == separators.decimal) decimalEntered = true;
 
-                $browser.defer(listener)
-            })
+                $browser.defer(listener);
+            });
 
             $element.bind('paste cut', function () {
-                $browser.defer(listener)
-            })
+                $browser.defer(listener);
+            });
         }
-    }
+    };
 }
 
 module.exports = ngModule => {

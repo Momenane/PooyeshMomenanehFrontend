@@ -1,4 +1,4 @@
-const IndexModule = angular.module("IndexModule", []);
+const IndexModule = angular.module("indexModule", []);
 
 // Controllers
 

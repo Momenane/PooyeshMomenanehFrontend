@@ -9,7 +9,7 @@ function jahadiPanelRouting($urlRouterProvider, $stateProvider) {
             abstract: true,
             // url: "/jahadiPanel",
             // template : "<ui-view id='jahadiPanel'></ui-view>",
-            controller: "panel.IndexController",
+            controller: "panel.indexController",
 			controllerAs: "self",
             // controller: "jahadiPanel.indexController",
             // controllerAs: "self",

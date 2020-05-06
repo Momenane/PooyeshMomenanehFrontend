@@ -3770,7 +3770,7 @@
         get: function () {
             return ctiy;
         }
-    }
+    };
 
 }
  

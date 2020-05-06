@@ -3,13 +3,13 @@ function serviceTypeFactory() {
         let type;
         switch (value) {
             case '':
-            type = 0
+            type = 0;
             break;
             case '':
-                type = 1
+                type = 1;
                 break;
             case '':
-                type = 2
+                type = 2;
                 break;
             default:
                 break;

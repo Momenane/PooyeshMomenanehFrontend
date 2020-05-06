@@ -4,10 +4,10 @@ function genderFilter() {
         let type;
         switch (value) {
             case 1:
-                type = 'زن'
+                type = 'زن';
                 break;
             case 2:
-                type = 'مرد'
+                type = 'مرد';
                 break;
             default:
                 break;

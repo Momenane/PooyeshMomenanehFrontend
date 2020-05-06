@@ -77,7 +77,7 @@ const common = {
         use: {
           loader: `webpack-jshint-loader`,
           options: {
-            esversion: 6
+            esversion: 8
           }
         }
       },
