@@ -132,12 +132,13 @@ const common = {
   plugins: [
     new webpack.ProvidePlugin({
       $: "jquery",
-      jquery: "jquery",
+      jQuery: "jquery",
       "window.$": "jquery",
-      "window.jquery": "jquery",
+      "window.jQuery": "jquery",
       Waves: "node-waves",
       iziToast: "izitoast",
-      moment: "jalali-moment"
+      moment: "moment",
+      jMoment: "jalali-moment"
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.SourceMapDevToolPlugin({
