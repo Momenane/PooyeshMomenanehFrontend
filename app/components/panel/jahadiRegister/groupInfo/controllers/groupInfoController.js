@@ -11,7 +11,7 @@ function groupInfoController(groupInfoServices, upload, state, resource) {
     {
       save: {
         method: "POST",
-        headers: {"content-type": "application/json"},
+        headers: { 'Content-Type': 'application/json; charset=utf-8'},
       },
       update: {
         method: "PATCH"
@@ -28,7 +28,7 @@ function groupInfoController(groupInfoServices, upload, state, resource) {
       self.jahadi.emergencyNumber &&
       self.jahadi.address) {
 
-      jahadiRegisterGroupService.save().$promise.then(
+      jahadiRegisterGroupService.save(form).$promise.then(
         response => {
           // form.$setUntouched();
           // form.$setPristine();
@@ -49,7 +49,6 @@ function groupInfoController(groupInfoServices, upload, state, resource) {
           console.log("fail createYear");
         }
       );
-
     }
     else {
       iziToast.show({
