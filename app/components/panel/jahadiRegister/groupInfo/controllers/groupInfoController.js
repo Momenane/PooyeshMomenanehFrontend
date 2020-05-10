@@ -90,7 +90,7 @@ function groupInfoController(groupInfoServices, upload, state, resource) {
         },
         errResponse => {
           iziToast.show({
-            message: errResponse.data.message,
+            message: "نشد",
             theme: "light",
             color: "red"
           });
