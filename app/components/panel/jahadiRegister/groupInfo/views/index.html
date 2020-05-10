@@ -19,7 +19,7 @@
 				<div class="register-title so-display-1 text-ocean-blue mb-5">
 					ثبت اطلاعات گروه جهادی
 				</div>
-				<form name="jahadiForm" autocomplete="off" novalidate ng-submit="self.submit(self.jahadi,jahadiForm)"
+				<form name="jahadiForm" autocomplete="off" ng-submit="self.submit(self.jahadi,jahadiForm)" novalidate
 					promise-btn>
 					<div class="row justify-content-center">
 						<div class="col-lg-8">
@@ -29,8 +29,8 @@
 										<label>نام گروه</label>
 										<div class="input-group">
 											<input class="reg-input so-input-xl w-100" type="text" ng-minlength="2"
-												ng-maxlength="40" ng-model="self.jahadi.title" name="title" required />
-											<div ng-messages="jahadiForm.title.$error">
+												ng-maxlength="40" ng-model="self.jahadi.name" name="name" required />
+											<div ng-messages="jahadiForm.name.$error">
 												<!-- <div ng-message="required">
 													پر کردن فیلد الزامی میباشد
 												</div> -->
@@ -165,13 +165,14 @@
 									</sd-input-container>
 								</div>
 								<div class="col-lg-12 text-center mt-4">
-									<!-- <button class="reg-btn btn btn-ocean-blue w-100" type="submit">
-										ثبت و ادامه
-									</button> -->
-									<button class="reg-btn btn btn-ocean-blue w-100"
-										ui-sref="panel.jahadiRegister.serviceInfo">
+									<button class="reg-btn btn btn-ocean-blue w-100" ng-click="self.submit(self.jahadi)"
+										ng-disabled="jahadiForm.$invalid">
 										ثبت و ادامه
 									</button>
+									<!-- <button class="reg-btn btn btn-ocean-blue w-100"
+										ui-sref="panel.jahadiRegister.serviceInfo">
+										ثبت و ادامه
+									</button> -->
 								</div>
 							</div>
 						</div>

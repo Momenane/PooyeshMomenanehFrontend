@@ -1,7 +1,22 @@
-groupInfoController.$inject = ["panel.jahadiRegister.groupInfoServices", "Upload", "$state"];
+groupInfoController.$inject = ["panel.jahadiRegister.groupInfoServices", "Upload", "$state", "$resource"];
 
-function groupInfoController(groupInfoServices, upload, state) {
+function groupInfoController(groupInfoServices, upload, state, resource) {
   var self = this;
+
+  let jahadiRegisterGroupService = resource(
+    `http://localhost:3000/group/add`,
+    {
+      routeParams: "@routeParams"
+    },
+    {
+      save: {
+        method: "POST"
+      },
+      update: {
+        method: "PATCH"
+      }
+    }
+  );
 
   self.ticket = {};
   self.ticket.priority = "2";
@@ -22,7 +37,7 @@ function groupInfoController(groupInfoServices, upload, state) {
   ];
   self.ticket.ticketType = self.ticketTypeEnum[0].value;
 
-  self.uploadLogo = function(file) {
+  self.uploadLogo = function (file) {
     if (file.length > 0) {
       upload
         .upload({
@@ -32,13 +47,13 @@ function groupInfoController(groupInfoServices, upload, state) {
           }
         })
         .then(
-          function(response) {
+          function (response) {
             self.ticket.attachment = response.data[0].fileName;
           },
-          function(resp) {
+          function (resp) {
             self.ticket = {};
           },
-          function(evt) {
+          function (evt) {
             var progressPercentage = parseInt((100.0 * evt.loaded) / evt.total);
             if (progressPercentage < 100) {
               self.loadingShow = true;
@@ -51,27 +66,26 @@ function groupInfoController(groupInfoServices, upload, state) {
     }
   };
 
-  self.submit = function(ticket, form) {
-    if (form.$valid) {
-      delete ticket.logoFile;
-      let parameter = {
-        type: "persons",
-        id: "self",
-        routeParams: "tickets"
-      };
+  self.submit = function (form) {
 
-      groupInfoServices.create(parameter, ticket).$promise.then(
+    if (self.jahadi.name &&
+      self.jahadi.firstName &&
+      self.jahadi.lastName &&
+      self.jahadi.phoneNumber &&
+      self.jahadi.emergencyNumber &&
+      self.jahadi.address) {
+
+      jahadiRegisterGroupService.save().$promise.then(
         response => {
-          ticket = {};
-          form.$setUntouched();
-          form.$setPristine();
+          // form.$setUntouched();
+          // form.$setPristine();
           iziToast.show({
-            message: response.message,
+            message: "عملیات باموفقیت انجام شد",
             theme: "light",
             color: "green"
           });
-
-          state.go("panel.jahadiRegister.list");
+          console.log(self.jahadi);
+          state.go("panel.jahadiRegister.serviceInfo");
         },
         errResponse => {
           iziToast.show({
@@ -82,10 +96,18 @@ function groupInfoController(groupInfoServices, upload, state) {
           console.log("fail createYear");
         }
       );
-    } else {
-      //   state.go("general.completeInformation.specialMemberships");
+
+    }
+    else {
+      iziToast.show({
+        message: "فرم را به درستی تکمیل کنید",
+        theme: "light",
+        color: "red"
+      });
+      console.log("fail createYear");
     }
   };
+  console.log(self.jahadi);
 }
 
 module.exports = ngModule => {
