@@ -10,7 +10,8 @@ function groupInfoController(groupInfoServices, upload, state, resource) {
     },
     {
       save: {
-        method: "POST"
+        method: "POST",
+        headers: {"content-type": "application/json"},
       },
       update: {
         method: "PATCH"
