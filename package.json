@@ -104,8 +104,8 @@
     "webpack-spritesmith": "^0.5.4"
   },
   "scripts": {
-    "build": "webpack-dev-server --mode development",
-    "production": "webpack --mode production",
+    "build": "npx webpack-dev-server --mode development",
+    "production": "npx webpack --mode production",
     "doc": "apidoc -i app/ -o apidoc/ "
   },
   "keywords": [
