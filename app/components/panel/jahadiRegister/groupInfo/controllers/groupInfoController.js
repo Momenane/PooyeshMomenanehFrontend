@@ -4,7 +4,7 @@ function groupInfoController(groupInfoServices, upload, state, resource) {
   var self = this;
 
   let jahadiRegisterGroupService = resource(
-    `http://localhost:3000/group/add`,
+    `${apiGroup}/add`,
     {
       routeParams: "@routeParams"
     },

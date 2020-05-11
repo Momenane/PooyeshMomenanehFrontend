@@ -2,7 +2,7 @@ mainServices.$inject = ["$resource"];
 
 function mainServices($resource) {
   return $resource(
-    `${apiReportCenterRefactor}/:type/:id/:routeParams`,
+    `${apiGetWay}/:type/:id/:routeParams`,
     { id: "@id", type: "@type", routeParams: "@routeParams" },
     {
       query: { method: "GET", isArray: true },

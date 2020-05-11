@@ -29,11 +29,10 @@ if (mode === "Test") {
 }
 
 apiGetWay = gateway + "/csm/v1";
-apiWarranty = gateway + "/warranty";
-apiLoan = gateway + "/loan/v1";
-apiSecurity = gateway + "/authentication/";
+apiUser = gateway + "/user";
+apiGroup = gateway + "/group";
+apiMember = gateway + "/member";
+apiPlan = gateway + "/plan";
+apiDonate = gateway + "/donate";
 apiFileManagerPost = gateway + "/file/Upload";
 apiFileManagerGet = gateway + "/file/media";
-apiLeasing = gateway + "/leasing/v1";
-apiLeasing = gateway + "/leasing/v1";
-apiReportCenterRefactor = gateway + "/ReportCenterRefactor/v1";

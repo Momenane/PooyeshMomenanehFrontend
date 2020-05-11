@@ -16,7 +16,7 @@ function carouselController(
   var self = this;
 
   let sendContactUsService = resource(
-    `${apiLeasing}/leasing-requests/committee-approval/payment-sources`,
+    `${apiGetWay}/leasing-requests/committee-approval/payment-sources`,
   );
 
   self.sendContactUs = function (form) {
