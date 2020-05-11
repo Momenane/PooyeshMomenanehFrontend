@@ -1,91 +1,65 @@
-personalInfoController.$inject = ["panel.needyAdd.personalInfoServices", "Upload", "$state"];
+personalInfoController.$inject = ["panel.needyAdd.personalInfoServices", "$state", "$resource"];
 
-function personalInfoController(personalInfoServices, upload, state) {
+function personalInfoController(personalInfoServices, state, resource) {
   var self = this;
 
-  self.ticket = {};
-  self.ticket.priority = "2";
-
-  self.ticketTypeEnum = [
+  let memberAddService = resource(
+    `${apiMember}/add`,
     {
-      value: "0",
-      key: "فنی"
+      routeParams: "@routeParams"
     },
     {
-      value: "1",
-      key: "مالی"
-    },
-    {
-      value: "2",
-      key: "سایر"
+      add: {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json; charset=utf-8'},
+      },
+      update: {
+        method: "PATCH"
+      }
     }
-  ];
-  self.ticket.ticketType = self.ticketTypeEnum[0].value;
+  );
 
-  self.uploadLogo = function(file) {
-    if (file.length > 0) {
-      upload
-        .upload({
-          url: apiFileManagerPost,
-          data: {
-            file: file
-          }
-        })
-        .then(
-          function(response) {
-            self.ticket.attachment = response.data[0].fileName;
-          },
-          function(resp) {
-            self.ticket = {};
-          },
-          function(evt) {
-            var progressPercentage = parseInt((100.0 * evt.loaded) / evt.total);
-            if (progressPercentage < 100) {
-              self.loadingShow = true;
-            } else {
-              self.loadingShow = false;
-            }
-            console.log(progressPercentage);
-          }
-        );
-    }
-  };
+  self.submit = function (form) {
 
-  self.submit = function(ticket, form) {
-    if (form.$valid) {
-      delete ticket.logoFile;
-      let parameter = {
-        type: "persons",
-        id: "self",
-        routeParams: "tickets"
-      };
+    if (self.need.national_code &&
+      self.need.name &&
+      self.need.surname &&
+      self.need.tels &&
+      self.need.birth_date &&
+      self.need.address) {
 
-      personalInfoServices.create(parameter, ticket).$promise.then(
+      memberAddService.save(form).$promise.then(
         response => {
-          ticket = {};
-          form.$setUntouched();
-          form.$setPristine();
+          // form.$setUntouched();
+          // form.$setPristine();
           iziToast.show({
-            message: response.message,
+            message: "عملیات باموفقیت انجام شد",
             theme: "light",
             color: "green"
           });
-
-          state.go("panel.needyAdd.list");
+          console.log(self.need);
+          state.go("panel.needyAdd.needInfo");
         },
         errResponse => {
           iziToast.show({
-            message: errResponse.data.message,
+            message: "نشد",
             theme: "light",
             color: "red"
           });
           console.log("fail createYear");
         }
       );
-    } else {
-      //   state.go("general.completeInformation.specialMemberships");
+    }
+    else {
+      iziToast.show({
+        message: "فرم را به درستی تکمیل کنید",
+        theme: "light",
+        color: "red"
+      });
+      console.log("fail createYear");
     }
   };
+  console.log(self.need);
 }
 
 module.exports = ngModule => {
