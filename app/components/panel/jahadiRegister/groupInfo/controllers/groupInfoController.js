@@ -28,7 +28,7 @@ function groupInfoController(groupInfoServices, upload, state, resource) {
       self.jahadi.emergencyNumber &&
       self.jahadi.address) {
 
-      jahadiRegisterGroupService.save(form.jahadi).$promise.then(
+      jahadiRegisterGroupService.save(form).$promise.then(
         response => {
           // form.$setUntouched();
           // form.$setPristine();

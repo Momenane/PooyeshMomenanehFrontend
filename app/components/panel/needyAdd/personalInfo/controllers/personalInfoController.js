@@ -28,7 +28,7 @@ function personalInfoController(personalInfoServices, state, resource) {
       self.need.birth_date &&
       self.need.address) {
 
-      memberAddService.save(form).$promise.then(
+      memberAddService.add(form).$promise.then(
         response => {
           // form.$setUntouched();
           // form.$setPristine();
