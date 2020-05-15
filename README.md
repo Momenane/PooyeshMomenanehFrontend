@@ -27,6 +27,7 @@ Ctrl + `
 
 ```bash
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true # to skip download chromimum
+
 npm i
 ```
 
@@ -38,6 +39,9 @@ npm i
 </div>
 
 ```bash
+export PUPPETEER_EXECUTABLE_PATH=/path/to/chromium
+export PUPPETEER_PRODUCT=firefox
+
 npm run build
 #if have error on 'node-sass'
 npm install
